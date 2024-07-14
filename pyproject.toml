@@ -1,0 +1,33 @@
+[project]
+name = "jbackup"
+version = "0.1.0"
+description = "James's Backup - A flexible system backup program"
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+    { name = "James David Clarke", email = "james@jamesdavidclarke.com" }
+]
+keywords = ["backup", "system", "zstd", "tar", "CustomTkinter"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: System :: Archiving :: Backup",
+    "Environment :: Console",
+    "Environment :: X11 Applications :: Qt"
+]
+dependencies = [
+    "customtkinter",
+    "zstandard",
+    "appdirs",
+    "tomli-w"
+]
+
+[project.scripts]
+jbackup-gui = "src.app:main"
+jbackup = "src.cli:main"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
